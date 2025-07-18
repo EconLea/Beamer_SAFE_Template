@@ -10,7 +10,7 @@ All of theses versions
 ---
 
 <details>
-  <summary> I got my own template I would like to adapt. :sparkles: </summary>
+  <summary> I would like to adapt my own template. :sparkles: </summary>
   <br>
 
 <details>
