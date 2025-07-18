@@ -7,6 +7,8 @@ All of theses versions
 1) allow you to easily use SAFE's colors, and
 2) add SAFE's (and optionally Goethe's) logo to the title slide. 
 
+**Please note:** The logos might not be position correctly after the first "pdflatex" command. This apparent issue should resolve itself after running "pdflatex", "biber" and "pdflatex" again. 
+
 ---
 
 <details>
