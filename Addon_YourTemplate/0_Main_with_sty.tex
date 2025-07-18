@@ -1,0 +1,103 @@
+\documentclass[
+14pt,notheorems,hyperref={pdfauthor=Lea Paoli}
+]{beamer} 
+
+%─────────────────────────────────────────────────────────────────────────────
+% Add your packages here 
+%─────────────────────────────────────────────────────────────────────────────
+
+
+%─────────────────────────────────────────────────────────────────────────────
+% Required Packages 
+%─────────────────────────────────────────────────────────────────────────────
+\usepackage{xcolor}               % Color support for text and backgrounds
+\usepackage{tikz}                 % For creating high-quality graphics
+\usetikzlibrary{positioning}      % Positioning library for TikZ
+
+
+%─────────────────────────────────────────────────────────────────────────────
+% Beamer Style with sty file
+%─────────────────────────────────────────────────────────────────────────────
+\usepackage{styles/beamercolorthemeelegant}       % Input Sty File   
+
+%─────────────────────────────────────────────────────────────────────────────
+% Color Definitions & Flexible Primary
+%─────────────────────────────────────────────────────────────────────────────
+% Define your color palette here (modify or add more):
+\definecolor{purple}{RGB}{102,51,153}
+\definecolor{gray}{HTML}{808080}
+
+% Define SAFE color scheme
+\definecolor{safeblue}{RGB}{4,92,163}
+\definecolor{safegreen}{RGB}{125,198,33}
+
+% Set which defined color to use as "primary" and "secondary":
+\colorlet{primary}{safeblue}         % change 'purple' to 'red', 'green', etc.
+\colorlet{secondary}{safegreen}       
+
+% Conditional for logo inclusion
+\newif\ifwithlogo
+\withlogotrue % Set to true to include the logo, false to exclude it
+
+\ifwithlogo
+  \newcommand{\inserttitlelogo}{
+    \begin{tikzpicture}[remember picture,overlay]
+      % SAFE logo - top right
+      \node[anchor=north east, xshift=-0.5cm, yshift=-0.5cm] at (current page.north east) {%
+        \includegraphics[height=1.6cm]{Figures/safe_logo.jpg}%
+      };
+
+      % Goethe logo - top left
+      \node[anchor=north west, xshift=0.5cm, yshift=-0.5cm] at (current page.north west) {%
+        \includegraphics[height=1.6cm]{Figures/goethe_logo.png}%
+      };
+    \end{tikzpicture}
+  }
+\else
+  \newcommand{\inserttitlelogo}{}  % empty if logo is disabled
+\fi
+
+%─────────────────────────────────────────────────────────────────────────────
+% Title & Author
+%─────────────────────────────────────────────────────────────────────────────
+\title[Short Title 
+% for Footer
+]{Full Title} % Presentation Title
+\subtitle{subtitle}
+\author[L. Paoli]{Lea Katharina Paoli}
+\institute[SAFE]{\institute[SAFE]{Goethe University Frankfurt \& \\ Leibniz Institute for Financial Research SAFE e.V.}}
+\date{\today}
+
+
+\begin{document}
+%─────────────────────────────────────────────────────────────────────────────
+% Generate title page  
+%─────────────────────────────────────────────────────────────────────────────
+{
+\setbeamertemplate{footline}{} 
+\begin{frame}
+  \titlepage
+  \inserttitlelogo
+  
+\end{frame}
+}
+
+%─────────────────────────────────────────────────────────────────────────────
+% Add Table of Contents  
+%─────────────────────────────────────────────────────────────────────────────
+\addtocounter{framenumber}{-1}
+%\begin{frame}
+%    \tableofcontents
+%\end{frame}
+
+%─────────────────────────────────────────────────────────────────────────────
+% Slides 
+%─────────────────────────────────────────────────────────────────────────────
+\section{Fixing Ideas}
+\begin{frame}
+
+Some text on your first slide. 
+
+
+\end{frame}
+\end{document}

@@ -1,0 +1,38 @@
+\documentclass[
+14pt,notheorems,hyperref={pdfauthor=Lea Paoli}
+]{beamer} 
+
+\input{0_Loadslides.tex} % Loads packages and some defined commands
+
+
+%%%%%%%%%%%%%%%%%%%%
+% Pympress 
+% (Presenter Mode)
+%%%%%%%%%%%%%%%%%%%%
+%*** Turn pympress on and off 
+% Define a new conditional
+\newif\ifwithpympress
+
+% Pympress off
+\withpympressfalse % Set the default value to false
+
+% Pympress on
+%\withpympresstrue
+
+%*** Pympress settings
+\ifwithpympress
+    % Pympress settings
+    \usepackage{pgfpages}
+    \setbeamertemplate{note page}[plain]
+    \setbeameroption{show notes on second screen=right} % turn of to distribute without notes
+\fi
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\input{1_Core.tex} 
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+

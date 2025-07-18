@@ -1,0 +1,105 @@
+%─────────────────────────────────────────────────────────────────────────────
+% Generate title page  
+%─────────────────────────────────────────────────────────────────────────────
+{
+\setbeamertemplate{footline}{} 
+\begin{frame}
+  \titlepage
+  \inserttitlelogo
+  
+%─────────────────────────────────────────────────────────────────────────────
+%%%%%%%%%%% NOTE
+
+\note{
+\vspace{1cm}
+Example:
+\begin{itemize}
+\setlength{\itemsep}{20pt}
+\item \mybullet Example Note
+\end{itemize}
+}
+
+%%%%%%%%%%% END NOTE
+%─────────────────────────────────────────────────────────────────────────────
+\end{frame}
+}
+
+%─────────────────────────────────────────────────────────────────────────────
+% Add Table of Contents  
+%─────────────────────────────────────────────────────────────────────────────
+\addtocounter{framenumber}{-1}
+%\begin{frame}
+%    \tableofcontents
+
+%─────────────────────────────────────────────────────────────────────────────
+%%%%%% NOTE
+
+%\note{
+%}
+
+%%%%%% END NOTE
+%─────────────────────────────────────────────────────────────────────────────
+%\end{frame}
+
+%─────────────────────────────────────────────────────────────────────────────
+% Slides 
+%─────────────────────────────────────────────────────────────────────────────
+\section{Fixing Ideas}
+\begin{frame}
+
+\begin{mybox}{Research Question:}{}
+Example some citation \cite{Drechsler2024}
+\end{mybox}
+
+
+\begin{itemize}
+  \item item 1
+  \item item 2
+\end{itemize}
+
+% Button to go to another slide 
+\begin{tikzpicture}[]
+  \node[anchor=south east] at ([xshift=-0.5cm, yshift=1cm]current page.south east) {
+    \hyperlink{Drechsler2024_ModelSetup}{\beamerbutton{\text{Go back}}}
+  };
+\end{tikzpicture}
+
+%─────────────────────────────────────────────────────────────────────────────
+%%%%%% NOTE
+
+\note{
+Example Text
+
+\begin{itemize}
+  \item test 
+\end{itemize}
+
+}
+%%%%%% END NOTE
+%─────────────────────────────────────────────────────────────────────────────
+\end{frame}
+
+
+%─────────────────────────────────────────────────────────────────────────────
+% QR Code to Paper
+%─────────────────────────────────────────────────────────────────────────────
+\section{Curious to learn more?}
+\subsection{Test subsection style}
+\begin{frame}
+
+\begin{center}
+Take a look here: \\~\\
+\qrcode[height=1in]{https://safe-frankfurt.de/}
+\end{center}
+
+\end{frame}
+%─────────────────────────────────────────────────────────────────────────────
+% Bibliography  
+%─────────────────────────────────────────────────────────────────────────────
+\begin{frame}[allowframebreaks]{References}
+    \printbibliography
+\end{frame}
+
+%─────────────────────────────────────────────────────────────────────────────
+% Supplementary Slides  
+%─────────────────────────────────────────────────────────────────────────────

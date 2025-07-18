@@ -1,0 +1,147 @@
+%─────────────────────────────────────────────────────────────────────────────
+% Encoding & Typeface Packages (preserved)
+%─────────────────────────────────────────────────────────────────────────────
+\usepackage[utf8]{inputenc}       % Support for UTF-8 encoded characters
+\usepackage[T1]{fontenc}          % Font encoding for better character representation
+\usepackage{palatino}              % Use the Palatino font for the document
+\usepackage{pifont}                % Access to PostScript Symbol and Dingbat fonts
+
+%─────────────────────────────────────────────────────────────────────────────
+% Citations & Bibliography
+%─────────────────────────────────────────────────────────────────────────────
+\usepackage{csquotes}  % Recommended with biblatex for proper quoting
+\usepackage[backend=biber,style=apa,citestyle=apa,uniquename=false,backref=false]{biblatex}
+\addbibresource{C:/Users/LeaPaoli/Repos/BibFiles/All_bib.bib}
+
+%─────────────────────────────────────────────────────────────────────────────
+% Language Support
+%─────────────────────────────────────────────────────────────────────────────
+\usepackage[english]{babel}        % Language support for English
+
+%─────────────────────────────────────────────────────────────────────────────
+% Figure & Table Packages
+%─────────────────────────────────────────────────────────────────────────────
+\usepackage{xcolor}               % Color support for text and backgrounds
+\usepackage{colortbl}             % Color support for tables
+\usepackage{ragged2e}             % Improved justification options
+\usepackage{caption}              % Custom captions for figures and tables
+\usepackage{subcaption}           % Support for sub-captions in figures
+\usepackage{tabularx}             % Tables with automatic width adjustment
+\usepackage{array}                % Extended options for array and tabular
+\usepackage{graphicx}             % Enhanced support for graphics
+\usepackage{adjustbox}            % Allows resizing of boxes and figures
+\usepackage{pgfplots}             % For creating plots and graphics with PGF
+\usepackage{tikz}                 % For creating high-quality graphics
+\usetikzlibrary{positioning}      % Positioning library for TikZ
+\usepackage{qrcode}               % QR code generation
+\usepackage{subcaption}           % Support for sub-captions in figures
+\usepackage{booktabs}             % For better looking tables
+
+%─────────────────────────────────────────────────────────────────────────────
+% Math Packages
+%─────────────────────────────────────────────────────────────────────────────
+\usepackage{amsmath}              % Enhanced math support
+\usepackage{accents}              % Custom accents for math symbols
+
+%─────────────────────────────────────────────────────────────────────────────
+% Colorboxes Package
+%─────────────────────────────────────────────────────────────────────────────
+\usepackage{tcolorbox}            % Colored boxes for highlighting content
+
+%─────────────────────────────────────────────────────────────────────────────
+% Import Beamer Style 
+%─────────────────────────────────────────────────────────────────────────────
+\usefonttheme{serif}               % Use a serif font theme for Beamer
+\usepackage{styles/elegantmacros}  % Custom style package
+\usefolder{styles}                 % Folder for style resources
+\usetheme[style=blue]{elegant}       
+
+%─────────────────────────────────────────────────────────────────────────────
+% List Package for Original Custom Lists
+%─────────────────────────────────────────────────────────────────────────────
+\usepackage{enumitem}              % Needed for custom list environments
+   
+
+%─────────────────────────────────────────────────────────────────────────────
+% Original Custom Commands & Lists
+%─────────────────────────────────────────────────────────────────────────────
+\newcommand{\ubar}[1]{\underaccent{\bar}{#1}}  % Underbar accent
+\newtcolorbox{mybox}[2][]{colframe=primary!50, colback=primary!10, title={#2}, #1}
+\newtcolorbox{myboxorig}[3][]{colframe=#2!25, colback=#2!10, coltitle=#2!20!black, title={#3}, #1}
+
+%─────────────────────────────────────────────────────────────────────────────
+% Color Definitions & Flexible Primary
+%─────────────────────────────────────────────────────────────────────────────
+% Define your color palette here (modify or add more):
+\definecolor{purple}{RGB}{102,51,153}
+\definecolor{red}{RGB}{200,30,45}
+\definecolor{green}{RGB}{34,139,34}
+\definecolor{blue}{HTML}{08457E} 
+\definecolor{gray}{HTML}{808080}
+
+% Define SAFE color scheme
+\definecolor{safeblue}{RGB}{4,92,163}
+\definecolor{safegreen}{RGB}{125,198,33}
+
+% Set which defined color to use as "primary" and "secondary":
+\colorlet{primary}{safeblue}         % change 'purple' to 'red', 'green', etc.
+\colorlet{secondary}{safegreen}       
+
+% Conditional for logo inclusion
+\newif\ifwithlogo
+\withlogotrue % Set to true to include the logo, false to exclude it
+
+\ifwithlogo
+  \newcommand{\inserttitlelogo}{
+    \begin{tikzpicture}[remember picture,overlay]
+      % SAFE logo - top right
+      \node[anchor=north east, xshift=-0.5cm, yshift=-0.5cm] at (current page.north east) {%
+        \includegraphics[height=1.6cm]{Figures/safe_logo.jpg}%
+      };
+
+      % Goethe logo - top left
+      \node[anchor=north west, xshift=0.5cm, yshift=-0.5cm] at (current page.north west) {%
+        \includegraphics[height=1.6cm]{Figures/goethe_logo.png}%
+      };
+    \end{tikzpicture}
+  }
+\else
+  \newcommand{\inserttitlelogo}{}  % empty if logo is disabled
+\fi
+  
+%─────────────────────────────────────────────────────────────────────────────
+% Restoring & Customizing Itemize Bullets
+%─────────────────────────────────────────────────────────────────────────────
+%─────────────────────────────────────────────────────────────────────────────
+% Define truly “safe” lists that always use a colored textbullet / label
+%─────────────────────────────────────────────────────────────────────────────
+\newlist{safeitemize}{itemize}{3}
+\setlist[safeitemize,1]{label=\color{primary}\large\textbullet, leftmargin=*}
+\setlist[safeitemize,2]{label=\color{primary}\normalsize\textbullet, leftmargin=1.5em}
+\setlist[safeitemize,3]{label=\color{primary}\scriptsize\textbullet, leftmargin=3em}
+
+\newlist{safenumerate}{enumerate}{3}
+\setlist[safenumerate,1]{label=\color{primary}\large\arabic*., leftmargin=*}
+\setlist[safenumerate,2]{label=\color{primary}\normalsize\arabic*., leftmargin=1.5em}
+\setlist[safenumerate,3]{label=\color{primary}\scriptsize\arabic*., leftmargin=3em}
+
+% Hook these into the normal names so existing slides Just Work
+\let\olditemize\itemize
+\let\endolditemize\enditemize
+\renewenvironment{itemize}{\begin{safeitemize}}{\end{safeitemize}}
+
+\let\oldenumerate\enumerate
+\let\endoldenumerate\endenumerate
+\renewenvironment{enumerate}{\begin{safenumerate}}{\end{safenumerate}}
+
+
+%─────────────────────────────────────────────────────────────────────────────
+% Title & Author
+%─────────────────────────────────────────────────────────────────────────────
+\title[Short Title 
+% for Footer
+]{Full Title} % Presentation Title
+\subtitle{subtitle}
+\author[L. Paoli]{Lea Katharina Paoli}
+\institute[SAFE]{\institute[SAFE]{Goethe University Frankfurt \& \\ Leibniz Institute for Financial Research SAFE e.V.}}
+\date{\today}
