@@ -34,5 +34,5 @@ The folder "MinimumExample" is for you! :innocent:
 <details>
 <summary>Give me a ready-to-use template. :no_mouth: </summary>
 <br>
-Check out "MyTemplate". As the name indicates, this is a (streamlined) version of the template I like using - I hope you will, too! :heart_eyes:
+Check out "MyTemplate". As the name indicates, this is a (streamlined) version of the template I like to use - I hope you will, too! :heart_eyes:
 </details>
