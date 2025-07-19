@@ -37,4 +37,17 @@ The folder "MinimumExample" is for you! :innocent:
 <summary>Give me a ready-to-use template. :no_mouth: </summary>
 <br>
 Check out "MyTemplate". As the name indicates, this is a (streamlined) version of the template I like to use - I hope you will, too! :heart_eyes:
+
+
+**Folder structure**:
+```
+├── 0_Loadslides.tex         # Contains all packages and personalizable design options
+├── 1_Core.tex               # Home to the content of your slides
+├── 2_PresentationOnly.tex   # Imports packages/design options from  0_Loadslides.tex and
+                             # contents from 1_Core.tex and wraps them in a beamer presentation
+├── styles                   # sty files
+├── figures                  # stores logos 
+
+```
+
 </details>
