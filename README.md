@@ -49,5 +49,5 @@ Check out "MyTemplate". As the name indicates, this is a (streamlined) version o
 ├── figures                  # stores logos 
 
 ```
-Alternatively, you can copy this overleaf-template [click here](https://www.overleaf.com/read/jfjntqbmgsnr#44c21c).
+Alternatively, you can copy this [overleaf-template](https://www.overleaf.com/read/jfjntqbmgsnr#44c21c).
 </details>
