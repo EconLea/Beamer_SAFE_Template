@@ -1,0 +1,37 @@
+# Ignore all LaTeX byproducts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.brf
+*.dvi
+*.fdb_latexmk
+*.fls
+*.glg
+*.glo
+*.gls
+*.idx
+*.ilg
+*.ind
+*.lof
+*.log
+*.lot
+*.lox
+*.nav
+*.nlo
+*.out
+*.pdfsync
+*.run.xml
+*.snm
+*.synctex.gz
+*.toc
+*.upa
+*.upb
+*.vrb
+*.xdy
+*.acn
+*.acr
+
+# Keep .tex and .pdf files
+!*.tex
+!*.pdf
