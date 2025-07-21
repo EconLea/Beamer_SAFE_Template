@@ -9,6 +9,8 @@ All of theses versions
 
 **Please note:** The logos might not be position correctly after the initial "pdflatex" command. This apparent issue should resolve itself after running "pdflatex", "biber" and "pdflatex" again. 
 
+Feel free to create an issue in case something isn't working properly or to suggest improvements. 
+
 ---
 
 <details>
