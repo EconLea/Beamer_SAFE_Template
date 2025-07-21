@@ -22,7 +22,10 @@ Feel free to create an issue in case something isn't working properly or to sugg
 <br>
 Take a look at the folder "Addon_YourTemplate". 
 
+
 The folder "styles" contains a simple sty file, which you can either use directly or add the respective lines of code to your current sty file. :smirk:
+
+In addition, be sure to copy the code in "0_Main_with_sty" to your preamble. 
 
 </details>
 
