@@ -13,7 +13,7 @@
 \usepackage{xcolor}               % Color support for text and backgrounds
 \usepackage{tikz}                 % For creating high-quality graphics
 \usetikzlibrary{positioning}      % Positioning library for TikZ
-
+\usepackage{etoolbox}             % For programming tools and conditionals
 
 %─────────────────────────────────────────────────────────────────────────────
 % Beamer Style with sty file
@@ -40,6 +40,7 @@
 \newif\ifwithlogo
 \withlogotrue % Set to true to include the logo, false to exclude it
 
+% Logo(s) on Title Page
 \ifwithlogo
   \newcommand{\inserttitlelogo}{
     \begin{tikzpicture}[remember picture,overlay]
@@ -57,6 +58,22 @@
 \else
   \newcommand{\inserttitlelogo}{}  % empty if logo is disabled
 \fi
+
+% SAFE logo on each slide
+\newcommand{\insertslidelogo}{
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=north east, xshift=-0.5cm, yshift=-0.5cm] at (current page.north east) {%
+      \includegraphics[height=1.6cm]{figures/safe_logo.jpg}%
+    };
+  \end{tikzpicture}
+}
+
+% Define logoframe environment
+\newenvironment{logoframe}
+  {\begin{frame}
+     \insertslidelogo
+  }
+  {\end{frame}}
 
 %─────────────────────────────────────────────────────────────────────────────
 % Title & Author
