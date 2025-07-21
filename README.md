@@ -1,6 +1,7 @@
-# Beamer_SAFE_Template
+# SAFE Themed Templates 
 
-This repo provides a few variants of a Latex Beamer presentation in "SAFE-style". 
+## Beamer Template
+The folder "Beamer Template" provides a few variants of a Latex Beamer presentation in "SAFE-style". 
 
 All of theses versions
 
@@ -56,3 +57,11 @@ Check out "MyTemplate". As the name indicates, this is a (streamlined) version o
 ```
 Alternatively, you can copy this [overleaf-template](https://www.overleaf.com/read/jfjntqbmgsnr#44c21c).
 </details>
+
+## Poster Template
+The poster template has two main options: 
+1) A poster with logos on a white background with blue font, or
+2) A poster without logos, a blue header and footer with white font.
+An example of both styles is provided in pdf form.
+
+**Please note: This template heavily builds on [Gemini](https://github.com/anishathalye/gemini), Copyright (c) Anish Athalye (me@anishathalye.com), as reflected in the licence. 
