@@ -64,4 +64,4 @@ The poster template has two main options:
 2) A poster without logos, a header and footer with white font on blue background.
 An example of both styles is provided in pdf form.
 
-**Please note: This template heavily builds on [Gemini](https://github.com/anishathalye/gemini), Copyright (c) Anish Athalye (me@anishathalye.com), as reflected by the licence. 
+**Please note**: This template heavily builds on [Gemini](https://github.com/anishathalye/gemini), Copyright (c) Anish Athalye (me@anishathalye.com), as reflected by the licence. 
