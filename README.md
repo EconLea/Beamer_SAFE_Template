@@ -1,4 +1,8 @@
-# SAFE Themed Templates 
+# SAFE Themed Templates
+
+**Please note:** The logos might not be position correctly after the initial "pdflatex" command. This apparent issue should resolve itself after running "pdflatex", "biber" and "pdflatex" again. 
+
+Feel free to create an issue in case something isn't working properly or to suggest improvements. 
 
 ## Beamer Template
 The folder "Beamer Template" provides a few variants of a Latex Beamer presentation in "SAFE-style". 
@@ -7,10 +11,6 @@ All of theses versions
 
 1) allow you to easily use SAFE's colors, and
 2) add SAFE's (and optionally Goethe's) logo to the title slide. 
-
-**Please note:** The logos might not be position correctly after the initial "pdflatex" command. This apparent issue should resolve itself after running "pdflatex", "biber" and "pdflatex" again. 
-
-Feel free to create an issue in case something isn't working properly or to suggest improvements. 
 
 ---
 
