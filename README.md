@@ -1,4 +1,4 @@
-# SAFE Themed Templates
+# Unofficial SAFE Themed Templates
 
 **Please note:** The logos might not be position correctly after the initial "pdflatex" command. This apparent issue should resolve itself after running "pdflatex", "biber" and "pdflatex" again. 
 
