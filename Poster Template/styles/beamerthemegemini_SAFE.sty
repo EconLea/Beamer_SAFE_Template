@@ -65,7 +65,8 @@
 \setbeamertemplate{bibliography item}[text]
 \hypersetup{
   colorlinks=true,
-  citecolor=safeblue
+  citecolor=safeblue,
+  urlcolor=black
 }
 
 % Navigation
@@ -224,14 +225,17 @@
 \setbeamertemplate{footline}{%
   \ifdefined\insertfootercontent
   \begin{beamercolorbox}[vmode]{footbox}
-    \ifbeamercolorempty[bg]{footbox rule}{}{
+    \ifbeamercolorempty[bg]{footbox rule}{}{% Optional separator line
       \begin{beamercolorbox}[wd=\paperwidth,colsep=0.25ex]{footbox rule}\end{beamercolorbox}
     }
     \vspace{1.5ex}
     \hspace{\sepwidth}
-    \usebeamerfont{footline}
+    \usebeamerfont{footline}%
+    \usebeamercolor[fg]{primary}%
     \centering
-    \insertfootercontent
+    {\hypersetup{linkcolor=., citecolor=., urlcolor=., colorlinks=true}%
+     \color{.}%
+     \insertfootercontent}%
     \hspace{\sepwidth}
     \vspace{1.5ex}
   \end{beamercolorbox}
