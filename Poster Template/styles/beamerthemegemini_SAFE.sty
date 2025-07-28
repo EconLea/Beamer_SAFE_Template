@@ -9,6 +9,7 @@
 \RequirePackage{changepage}
 \RequirePackage{calc}
 \RequirePackage{hyperref}
+\RequirePackage{etoolbox}
 
 % ====================
 % Font Setup (pdfLaTeX-compatible)
@@ -95,6 +96,9 @@
   colorlinks=true,
   citecolor=safeblue,
   urlcolor=black
+}
+\AtBeginBibliography{%
+  \setlength{\itemsep}{1.5ex}  % increase space between bibliography entries
 }
 
 % Navigation
