@@ -26,6 +26,29 @@
 \setbeamerfont{footline}{family=\rmfamily,size=\normalsize}
 \setbeamerfont{block body}{size=\normalsize}
 
+% set manual header margins as we avoid \logoleft and \logoright
+% this correctly centers header 
+% Define logo height (user-settable)
+\newlength{\logoheight}
+\setlength{\logoheight}{5cm}  % You can change this freely
+
+% Define margins (we'll calculate them next)
+\newlength{\manualheadmarginleft}
+\newlength{\manualheadmarginright}
+
+% Temp variables to help with ratio-based calculation
+\newlength{\templen}
+
+% Compute: marginleft = logoheight × (960 / 524) ≈ 1.8328
+\setlength{\templen}{\logoheight}
+\setlength{\manualheadmarginleft}{1.8328\templen}
+
+% Compute: marginright = logoheight × (1) = logoheight
+\setlength{\manualheadmarginright}{\logoheight}
+% Add a minimum space between logo and header 
+\addtolength{\manualheadmarginleft}{0.5cm}
+\addtolength{\manualheadmarginright}{0.5cm}
+
 % ====================
 % Macros
 % ====================
@@ -107,7 +130,7 @@
 \setbeamertemplate{headline}{%
   \begin{beamercolorbox}{headline}
     \begin{columns}
-      \begin{column}{\maxlogowidth}
+      \begin{column}{\manualheadmarginleft} %\maxlogowidth
         \vskip5ex
         \ifdefined\insertlogoleft
         \vspace*{\fill}
@@ -117,7 +140,8 @@
         \vspace*{\fill}
         \fi
       \end{column}
-      \begin{column}{\dimexpr\paperwidth-\maxlogowidth-\maxlogowidth}
+      \begin{column}{\dimexpr\paperwidth - \manualheadmarginleft - \manualheadmarginright} % use custom margins
+      %\begin{column}{\dimexpr\paperwidth-\maxlogowidth-\maxlogowidth}
         \usebeamerfont{headline}
         \vskip3ex
         \centering
@@ -131,7 +155,7 @@
         {\usebeamerfont{headline institute}\usebeamercolor[fg]{headline institute}\insertinstitute\\[1ex]}
         \fi
       \end{column}
-      \begin{column}{\maxlogowidth}
+      \begin{column}{\manualheadmarginright} %\maxlogowidth
         \vskip5ex
         \ifdefined\insertlogoright
         \vspace*{\fill}
