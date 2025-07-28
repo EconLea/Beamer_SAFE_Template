@@ -49,6 +49,11 @@
 \addtolength{\manualheadmarginleft}{0.5cm}
 \addtolength{\manualheadmarginright}{0.5cm}
 
+% Define consistent vertical baseline of header text and logo to top of page
+\newlength{\headeroffset}
+\setlength{\headeroffset}{1.7cm}  % the desired top margin from the page top
+
+
 % ====================
 % Macros
 % ====================
@@ -131,7 +136,7 @@
   \begin{beamercolorbox}{headline}
     \begin{columns}
       \begin{column}{\manualheadmarginleft} %\maxlogowidth
-        \vskip5ex
+        \vspace*{\headeroffset}  % ensure alignment with logos
         \ifdefined\insertlogoleft
         \vspace*{\fill}
         \hspace{10ex}
@@ -143,7 +148,7 @@
       \begin{column}{\dimexpr\paperwidth - \manualheadmarginleft - \manualheadmarginright} % use custom margins
       %\begin{column}{\dimexpr\paperwidth-\maxlogowidth-\maxlogowidth}
         \usebeamerfont{headline}
-        \vskip3ex
+ 	\vskip3ex
         \centering
         \ifx \inserttitle \empty \else
         {\usebeamerfont{headline title}\usebeamercolor[fg]{headline title}\inserttitle\\[0.5ex]}

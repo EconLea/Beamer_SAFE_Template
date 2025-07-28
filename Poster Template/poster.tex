@@ -108,12 +108,12 @@
 {
     \begin{tikzpicture}[remember picture, overlay]
       % Top left: Goethe logo, 2cm from edges
-      \node[anchor=north west, xshift=3cm, yshift=-1.7cm] at (current page.north west) {
+      \node[anchor=north west, xshift=3cm, yshift=-\headeroffset + 0.3cm] at (current page.north west) {
         \includegraphics[height=5cm]{figures/goethe_logo.png}
       };
 
       % Top right: SAFE logo, 2cm from edges
-      \node[anchor=north east, xshift=-3cm, yshift=-1.7cm] at (current page.north east) {
+      \node[anchor=north east, xshift=-3cm, yshift=-\headeroffset + 0.3cm] at (current page.north east) {
         \includegraphics[height=5cm]{figures/safe_logo.jpg}
       };
     \end{tikzpicture}
