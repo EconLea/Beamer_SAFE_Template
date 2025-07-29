@@ -254,23 +254,30 @@
 
 % Footer
 \newcommand{\footercontent}[1]{\newcommand{\insertfootercontent}{#1}}
+\newlength{\sepwidth}
+\setlength{\sepwidth}{0.05\paperwidth}
 
-\setbeamertemplate{footline}{%
+\setbeamertemplate{footline}{
   \ifdefined\insertfootercontent
-  \begin{beamercolorbox}[vmode]{footbox}
-    \ifbeamercolorempty[bg]{footbox rule}{}{% Optional separator line
-      \begin{beamercolorbox}[wd=\paperwidth,colsep=0.25ex]{footbox rule}\end{beamercolorbox}
-    }
-    \vspace{1.5ex}
-    \hspace{\sepwidth}
-    \usebeamerfont{footline}%
-    \usebeamercolor[fg]{primary}%
-    \centering
-    {\hypersetup{linkcolor=., citecolor=., urlcolor=., colorlinks=true}%
-     \color{.}%
-     \insertfootercontent}%
-    \hspace{\sepwidth}
-    \vspace{1.5ex}
-  \end{beamercolorbox}
+    \leavevmode
+    \begin{beamercolorbox}[vmode, wd=\paperwidth]{footbox}
+      \vspace{1ex}
+      \begin{columns}[t,totalwidth=\paperwidth]
+        \begin{column}{\sepwidth}
+          % Empty left margin (same width as in headline)
+        \end{column}
+        \begin{column}{\dimexpr \paperwidth - \sepwidth - \sepwidth}
+          \usebeamerfont{footline}%
+          \usebeamercolor[fg]{primary}%
+          \hypersetup{linkcolor=., citecolor=., urlcolor=., colorlinks=true}%
+          \color{.}%
+          \insertfootercontent
+        \end{column}
+        \begin{column}{\sepwidth}
+          % Empty right margin (same width as in headline)
+        \end{column}
+      \end{columns}
+      \vspace{1ex}
+    \end{beamercolorbox}
   \fi
 }

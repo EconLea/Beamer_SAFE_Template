@@ -61,16 +61,15 @@
 % Set length of columns 
 %─────────────────────────────────────────────────────────────────────────────
 % Adjust the number of columns here
-\newcommand{\numcolumns}{3} 
+\newcommand{\numcolumns}{2} 
 
 % Calculate widths dynamically
-\newlength{\sepwidth}
 \newlength{\colwidth}
 
 % (N+1)*sep + N*col = \paperwidth
 % Let sepwidth = s => colwidth = c = (\paperwidth - (N+1)*s)/N
 % Set sepwidth as fraction of paperwidth (e.g., 0.02\paperwidth)
-\setlength{\sepwidth}{0.02\paperwidth}
+% \setlength{\sepwidth}{0.05\paperwidth}
 
 % Compute colwidth = (\paperwidth - (\numcolumns + 1)*\sepwidth)/\numcolumns
 \pgfmathsetmacro{\calccolwidth}{(\paperwidth - (\numcolumns + 1)*\sepwidth) / \numcolumns}
@@ -81,21 +80,31 @@
 %─────────────────────────────────────────────────────────────────────────────
 % Set length of columns 
 %─────────────────────────────────────────────────────────────────────────────
-\title{Some fancy title: followed by some more text}
+\title{\Large Endogenous Deposit Betas in a Model with Run Risk}
 
-\author{Alyssa P. Hacker \inst{1} \and Ben Bitdiddle \inst{2} \and Lem E. Tweakit \inst{2}}
+\author{Lea Katharina Paoli \inst{1}}
 
-\institute[shortinst]{\inst{1} Leibniz Institute for Financial Research SAFE \samelineand \inst{2} Goethe University Frankfurt}
+\institute[shortinst]{\inst{1} Leibniz Institute for Financial Research SAFE \& Goethe University Frankfurt % \samelineand \inst{2} University of Mannheim}
+}
 
 
 %─────────────────────────────────────────────────────────────────────────────
 % Footer
 %─────────────────────────────────────────────────────────────────────────────
-\footercontent{
-  \href{https://www.example.com}{https://www.example.com} \hfill
-  ABC Conference 2025, New York --- XYZ-1234 \hfill
-  \href{mailto:alyssa.p.hacker@example.com}{alyssa.p.hacker@example.com}}
-
+\footercontent{%
+  % LEFT aligned link
+  \makebox[0pt][l]{%
+    \href{https://google.com}{https://google.com}%
+  }%
+  % CENTER aligned text
+  \makebox[\textwidth][c]{%
+    Some Event%
+  }%
+  % RIGHT aligned email
+  \makebox[0pt][r]{%
+    \href{mailto:somemail}{somemail@safe-frankfurt.de}%
+  }%
+}
 
 %─────────────────────────────────────────────────────────────────────────────
 % Body
