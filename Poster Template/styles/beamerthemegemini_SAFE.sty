@@ -31,7 +31,7 @@
 % this correctly centers header 
 % Define logo height (user-settable)
 \newlength{\logoheight}
-\setlength{\logoheight}{5cm}  % can be reset in the main text 
+\setlength{\logoheight}{4.5cm}  % can be reset in the main text 
 
 % Define margins (we'll calculate them next)
 \newlength{\manualheadmarginleft}
@@ -50,9 +50,20 @@
 \addtolength{\manualheadmarginleft}{0.5cm}
 \addtolength{\manualheadmarginright}{0.5cm}
 
+% Define horizontal logo shift
+\newlength{\xshiftlength}
+\setlength{\xshiftlength}{3cm}  % the desired top margin from the page top
+
 % Define consistent vertical baseline of header text and logo to top of page
 \newlength{\headeroffset}
 \setlength{\headeroffset}{1.7cm}  % the desired top margin from the page top
+
+% Calculate the height of normal sized text to fit heading automatically 
+\newlength{\lineheight}
+\setlength{\lineheight}{\the\baselineskip}
+
+\newlength{\headingheight}
+\setlength{\headingheight}{\dimexpr \logoheight - \lineheight} 
 
 
 % ====================
@@ -135,50 +146,61 @@
   \setlength{\maxlogowidth}{\maxof{\logoleftwidth}{\logorightwidth}}
 }
 
-% Headline
+ 
+% Adjusted headline template
 \setbeamertemplate{headline}{%
+  \vspace*{\headeroffset} % Space above the headline block
+
   \begin{beamercolorbox}{headline}
-    \begin{columns}
-      \begin{column}{\manualheadmarginleft} %\maxlogowidth
-        \vspace*{\headeroffset}  % ensure alignment with logos
+    \begin{columns}[t,totalwidth=\paperwidth]
+
+      % Left logo
+      \begin{column}{\manualheadmarginleft}
         \ifdefined\insertlogoleft
-        \vspace*{\fill}
-        \hspace{10ex}
-        \raggedright
-        \insertlogoleft
-        \vspace*{\fill}
+          \vbox to \logoheight{%
+            \vfill
+            \hspace{10ex}\raggedright\insertlogoleft
+            \vfill
+          }
         \fi
       \end{column}
-      \begin{column}{\dimexpr\paperwidth - \manualheadmarginleft - \manualheadmarginright} % use custom margins
-      %\begin{column}{\dimexpr\paperwidth-\maxlogowidth-\maxlogowidth}
-        \usebeamerfont{headline}
- 	\vskip3ex
-        \centering
-        \ifx \inserttitle \empty \else
-        {\usebeamerfont{headline title}\usebeamercolor[fg]{headline title}\inserttitle\\[0.5ex]}
-        \fi
-        \ifx \beamer@shortauthor \empty \else
-        {\usebeamerfont{headline author}\usebeamercolor[fg]{headline author}\insertauthor\\[1ex]}
-        \fi
-        \ifx \insertinstitute \empty \else
-        {\usebeamerfont{headline institute}\usebeamercolor[fg]{headline institute}\insertinstitute\\[1ex]}
-        \fi
+
+      % Center block: title, author, institute
+      \begin{column}{\dimexpr\paperwidth - \manualheadmarginleft - \manualheadmarginright}
+        \vbox to \headingheight { 
+          \centering
+          \ifx\inserttitle\empty\else
+            {\usebeamerfont{headline title}\usebeamercolor[fg]{headline title}\inserttitle\par}%
+          \fi
+          \vfill
+          \ifx\beamer@shortauthor\empty\else
+            {\usebeamerfont{headline author}\usebeamercolor[fg]{headline author}\insertauthor\par}%
+          \fi
+          \vfill
+          \ifx\insertinstitute\empty\else
+            {\usebeamerfont{headline institute}\usebeamercolor[fg]{headline institute}\insertinstitute\par}%
+          \fi
+        }
       \end{column}
-      \begin{column}{\manualheadmarginright} %\maxlogowidth
-        \vskip5ex
+
+      % Right logo
+      \begin{column}{\manualheadmarginright}
         \ifdefined\insertlogoright
-        \vspace*{\fill}
-        \raggedleft
-        \insertlogoright
-        \hspace{10ex}
-        \vspace*{\fill}
+          \vbox to \logoheight{%
+            \vfill
+            \raggedleft\insertlogoright\hspace{10ex}
+            \vfill
+          }
         \fi
       \end{column}
+
     \end{columns}
-    \vspace{5ex}
+
+    % Optional rule under the headline
     \ifbeamercolorempty[bg]{headline rule}{}{\begin{beamercolorbox}[wd=\paperwidth,colsep=0.5ex]{headline rule}\end{beamercolorbox}}
   \end{beamercolorbox}
 }
+
 
 % Block styles
 \setbeamertemplate{block begin}{%
