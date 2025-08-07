@@ -1,7 +1,8 @@
 MIT License
 
 Poster Template Copyright (c) 2016 Anish Athalye (me@anishathalye.com)
-Modifications copyright (c) 2025 Lea Paoli
+Modifications Copyright (c) 2025 Lea Paoli
+Logo Copyright (c) 2025 Goethe University and Leibniz Institute SAFE, respectively. Please see note below. 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -20,3 +21,12 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
+
+Note regarding use of the Goethe Logo: 
+"Das Logo der Goethe-Universität kann von allen Angestellten der Goethe-Universität im 
+Rahmen ihrer Tätigkeit für die Universität genutzt werden. Externe Personen, Einrichtungen 
+oder Unternehmen dürfen das Logo nur nach Rücksprache und mit schriftlicher Zusage durch die 
+Abteilung PR und Kommunikation verwenden. Studierenden ist es leider aus rechtlichen Gründen 
+grundsätzlich nicht erlaubt, das Logo für ihre Arbeiten (z.B. Bachelor-, Master- oder Hausarbeiten) 
+zu verwenden. In begründeten Einzelfällen ist es jedoch möglich, auf Anfrage die Erlaubnis für die 
+Verwendung des Logos zu erhalten."
