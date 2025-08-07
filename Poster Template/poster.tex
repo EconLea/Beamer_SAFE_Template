@@ -111,20 +111,24 @@
 %─────────────────────────────────────────────────────────────────────────────
 \begin{document}
 
+
 \ifwithlogo
 % Don't use \logoright and \logoleft here, as they don't offer sufficient control 
-\setlength{\logoheight}{4.5cm}  % You can change this freely
+\setlength{\logoheight}{4.5cm}    % vertical logo height
+\setlength{\xshiftlength}{3cm}    % horizontal logo shift
+\setlength{\headeroffset}{1.7cm}  % top margin from the page top
+
 \addtobeamertemplate{headline}{}
 {
     \begin{tikzpicture}[remember picture, overlay]
       % Top left: Goethe logo, 2cm from edges
-      \node[anchor=north west, xshift=3cm, yshift=-\headeroffset + 0.5cm] at (current page.north west) {
-        \includegraphics[height=4.5cm]{figures/goethe_logo.png}
+      \node[anchor=north west, xshift=\xshiftlength, yshift=-\headeroffset + 0.5cm] at (current page.north west) {
+        \includegraphics[height=\logoheight]{figures/goethe_logo.png}
       };
 
       % Top right: SAFE logo, 2cm from edges
-      \node[anchor=north east, xshift=-3cm, yshift=-\headeroffset + 0.5cm] at (current page.north east) {
-        \includegraphics[height=4.5cm]{figures/safe_logo.jpg}
+      \node[anchor=north east, xshift=-\xshiftlength, yshift=-\headeroffset + 0.5cm] at (current page.north east) {
+        \includegraphics[height=\logoheight]{figures/safe_logo.jpg}
       };
     \end{tikzpicture}
 }
