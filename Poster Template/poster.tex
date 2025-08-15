@@ -16,6 +16,10 @@
 \pgfplotsset{compat=1.14}
 \usepackage{anyfontsize}
 \usepackage{qrcode}               % QR code generation
+\usepackage{uarial}               % change font to Arial
+\renewcommand{\familydefault}{\sfdefault}   
+
+
 
 %─────────────────────────────────────────────────────────────────────────────
 % Citations & Bibliography
@@ -128,7 +132,7 @@
 
       % Top right: SAFE logo, 2cm from edges
       \node[anchor=north east, xshift=-\xshiftlength, yshift=-\headeroffset + 0.5cm] at (current page.north east) {
-        \includegraphics[height=\logoheight]{figures/safe_logo.jpg}
+        \includegraphics[height=\logoheight]{figures/safe_logo.png}
       };
     \end{tikzpicture}
 }
